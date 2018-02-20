@@ -40,7 +40,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         if (!isNaN(time)) {
 
             // 인형제조 테이블 (일반으로 가정하되 중제한정 표시)
-            // (소전) "%d"
+            // (소전) "인형"? %d
 
             write(bot, channelID, parseDoll(time, null));
 
@@ -329,7 +329,7 @@ function parseDoll(time, heavy) {
             break;
 
         case 340:
-            name = "G36, 리베롤(AR), 씹새, 에스베";
+            name = "G36, 리베롤(AR), 씹새, 에스베(RF)";
             break;
 
         case 345:
@@ -343,7 +343,7 @@ function parseDoll(time, heavy) {
         case 350:
             if (heavy == null) name = "95식, 97식(AR), 한조, 도라지(중)(RF)";
             else if (heavy) name = "95식, 97식(AR), 한조, 도라지(RF)";
-            else name = "95식, 97식(AR), 한조";
+            else name = "95식, 97식(AR), 한조(RF)";
             break;
 
         case 352:
