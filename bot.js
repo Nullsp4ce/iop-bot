@@ -368,9 +368,17 @@ function parseDoll(time, heavy) {
         case 405:
             name = "댕댕, 자스타바";
             break;
+        
+        case 409:
+            name = "안구사";
+            break;
 
         case 410:
             name = "모신나강, T-5000";
+            break;
+            
+        case 412:
+            name = "마일리";
             break;
 
         case 415:
