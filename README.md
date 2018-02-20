@@ -50,6 +50,8 @@ In fact you can't craft fairies in normalcraft, but it's not implemented since t
 ### Utility: Cointoss
 `코인토스 !(던지기)` `(코인 || 동전) (던지기)?` `운명의 코인토스!`
 
+`(소전) (Commands combinations above)`
+
 When you come across a situation that your craft time has two t-dolls, a cointoss is ready for you.
 
 > Q: 운명의 코인토스!<br/>
