@@ -30,7 +30,7 @@ T-dolls appearing only in heavycraft are marked as `(중)`.
 Can't craft shotguns. Several entries in timetable becomes nothing.
 
 > Q: 소전 일반 350<br/>
-> A: 95식, 97식(AR), 한조
+> A: 95식, 97식(AR), 한조(RF)
 
 - Heavy `(소전) (중제) %d`
 
