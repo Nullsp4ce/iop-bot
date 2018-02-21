@@ -732,7 +732,7 @@ function timetable(bot, channelID) {
             color: 16777215,
             title: "IOP 봇 시간표 업데이트 기록",
             url: "https://github.com/Nullsp4ce/iop-bot/blob/master/TimetableUpdate.md",
-            description: "최근 추가: 2018.2.20"
+            description: "최근 추가: 2018.2.20",
             fields: [{
                 name: "리벨리온 소대: AN-94(안구사), AK-12(마일리)",
                 value: "4:09 안구사 (5★ AR), 4:12 마일리 (5★ AR)"
