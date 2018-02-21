@@ -66,7 +66,7 @@ A:<br/>
 
 명령어 목록을 출력합니다.
 
-`소전 체인지로그 기능`
+`소전 체인지로그` `소전 체인지로그 기능`
 
 [기능 체인지로그 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md) 및 최근 버전 기능을 표시합니다.
 

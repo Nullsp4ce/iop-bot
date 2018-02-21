@@ -94,7 +94,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
                 case "체인지로그":
 
-                    if (second == "기능") {
+                    if (second == null || second == "기능") {
                         changelog(bot, channelID);
                     } else if (second == "시간표") {
                         timetable(bot, channelID);
@@ -716,7 +716,7 @@ function changelog(bot, channelID) {
             color: 16777215,
             title: "IOP 봇 체인지로그",
             url: "https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md",
-            description: "v0.5.2",
+            description: "v0.5.3",
             fields: [{
                 name: "명령어 목록",
                 value: "`소전 명령어`로 명령어 목록을 볼 수 있습니다. 봇의 상태에도 쓰여있어요."
@@ -758,7 +758,7 @@ function help(bot, channelID) {
             title: "IOP 봇 명령어 목록",
             description: "모든 명령은 `소전`으로 시작합니다. 여기서는 생략합니다.\n명령어 별칭을 포함한 완전한 정보는 [깃헙 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/README.md)를 참조하십시오.",
             fields: [{
-                name: "`(시간)`",
+                name: "`(시간)` `인형 (시간)`",
                 value: "해당 제조시간의 인형을 검색합니다. 괄호는 제외하십시오.\n시간은 h:mm, hmm, h시간 m분 모두 가능합니다."
             }, {
                 name: "`일반 (시간)`",
@@ -771,12 +771,12 @@ function help(bot, channelID) {
                 value: "해당 제조시간의 장비 **또는 요정**을 검색합니다."
             }, {
                 name: "`운명의 코인토스!`",
-                value: "`소전`으로 시작하지 않아도 작동합니다."
+                value: "`소전`으로 시작하지 않아도 발동합니다."
             }, {
                 name: "`명령어` `도움`",
                 value: "이 명령어 목록입니다."
             }, {
-                name: "`체인지로그 기능`",
+                name: "`체인지로그` `체인지로그 기능`",
                 value: "기능 체인지로그를 표시합니다."
             }, {
                 name: "`체인지로그 시간표`",
