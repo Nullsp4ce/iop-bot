@@ -58,3 +58,9 @@ When you come across a situation that your craft time has two t-dolls, a cointos
 > A:<br/>
 > 운명의 코인토스!<br/>
 > 숫자. 뒷면이다.
+
+## TODO
+- Help command 
+- Changelog, Link to this page
+- List optimizing to dictionary or sth?
+- T-Doll/Equipment Information
