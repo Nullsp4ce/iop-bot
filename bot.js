@@ -38,14 +38,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
         if (!isNaN(time)) {
 
-            // 인형제조 테이블 (일반으로 가정하되 중제한정 표시)
-            // (소전) "인형"? %d
+            // 인형제조 테이블 (전부)
+            // 소전 %d
 
             write(bot, channelID, parseDoll(time, null));
 
         } else if (hearCoinToss(args)) {
 
-            // (소전) (코인토스)
+            // 소전 코인토스
+
             coinCall(bot, channelID);
 
         } else {
@@ -54,12 +55,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             time = parseTime(args);
             switch (first) {
 
+                // 인형제조 테이블 (전부)
+                // 소전 인형 %d
+
                 case "인형":
                     write(bot, channelID, parseDoll(time, null));
                     break;
 
                 // 인형제조 테이블 (일반)
-                // (소전) (일반) %d
+                // 소전 일반 %d
 
                 case "일반":
                 case "보통":
@@ -67,7 +71,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     break;
 
                 // 인형제조 테이블 (중제)
-                // (소전) (중제) %d
+                // 소전 중제 %d
 
                 case "중제":
                 case "중형":
@@ -76,11 +80,26 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     break;
 
                 // 장비제조 테이블
-                // (소전) (장비) %d
+                // 소전 장비 %d
 
                 case "장비":
                 case "요정":
                     write(bot, channelID, parseEquip(time));
+                    break;
+
+                case "봇_체인지로그":
+                    changelog(bot, channelID);
+                    break;
+
+                case "봇_시간표":
+                    timetable(bot, channelID);
+
+                // 명령어 목록
+                // 소전 명령어
+
+                case "명령어":
+                case "도움":
+                    help(bot, channelID);
                     break;
 
             }
@@ -122,25 +141,26 @@ function hearCoinToss(args) {
 
     // logger.debug("hearCoinToss("+args.toString()+");");
 
+    // 운명의 코인토스!
+    // (동전) (던지기)?
+    // 코인토스 !(던지기)
+
     if (first == "운명의" && second == "코인토스!" && third == null) {
 
         return true;
 
-    } else if (first == "코인토스" || first == "코인" || first == "동전") {
+    } else if (first == "코인" || first == "동전") {
 
-        // 운명의 코인토스!
-        // 코인토스 !(던지기)
-        // (코인 || 동전) (던지기)?
-
-        if (first != "코인토스") {
-            if (second == "던지기" || second == null) {
-                return true;
-            }
-        } 
-        else if (second != "던지기") 
+        if (second == "던지기" || second == null) {
             return true;
-        return false;
-    }
+        }
+
+    } else if (first == "코인토스" && second != "던지기") {
+
+        return true;
+
+    } else return false;
+
 }
 
 function parseDoll(time, heavy) {
@@ -680,6 +700,85 @@ function coinTossOfDestiny(bot, channelID) {
         content = coinDescriptive(result == "앞면")+". "+result+"이다.";
     }
     write(bot, channelID, content);
+}
+
+function changelog(bot, channelID) {
+    bot.sendMessage({
+        to: channelID,
+        embed: {
+            color: 16777215,
+            title: "IOP 봇 체인지로그",
+            description: "v0.5.0",
+            fields: [{
+                name: "명령어 목록",
+                value: "`소전 명령어`로 명령어 목록을 볼 수 있습니다."
+            }, {
+                name: "체인지로그, 시간표 업데이트 기록",
+                value: "`소전 봇_체인지로그`, `소전 봇_시간표`는 각각 봇의 기능/시간표 업데이트 상황을 제공합니다."
+            }],
+            footer: {
+                text: "IOP Bot by Nullspace#5289"
+            }
+        }
+    })
+}
+
+function timetable(bot, channelID) {
+    bot.sendMessage({
+        to: channelID,
+        embed: {
+            color: 16777215,
+            title: "IOP 봇 시간표 업데이트 기록",
+            fields: [{
+                name: "리벨리온 소대: AN-94(안구사), AK-12(마일리)"
+                value: "4:09 안구사 (5★ AR), 4:12 마일리 (5★ AR)"
+            }],
+            footer: {
+                text: "IOP Bot by Nullspace#5289 | 최근 추가: 2018.2.20"
+            }
+        }
+    })
+}
+
+function help(bot, channelID) {
+    bot.sendMessage({
+        to: channelID,
+        embed: {
+            color: 16777215,
+            title: "IOP 봇 명령어 목록",
+            description: "모든 명령은 `소전`으로 시작합니다. 여기서는 생략합니다. \
+            명령어 별칭을 포함한 완전한 정보는 [깃헙 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/README.md)를 참조하십시오.",
+            fields: [{
+                name: "`(시간)`",
+                value: "해당 제조시간의 인형을 검색합니다. 괄호는 제외하십시오. \
+                시간은 h:mm, hmm, h시간 m분 모두 가능합니다."
+            }, {
+                name: "`일반 (시간)`"
+                value: "일반제조 환경 하에서 해당 제조시간의 인형을 검색합니다."
+            }, {
+                name: "`중제 (시간)`"
+                value: "중형제조 환경 하에서 해당 제조시간의 인형을 검색합니다."
+            }, {
+                name: "`장비 (시간)` `요정 (시간)`"
+                value: "해당 제조시간의 장비 **또는 요정**을 검색합니다."
+            }, {
+                name: "`운명의 코인토스!`"
+                value: "`소전`으로 시작하지 않아도 작동합니다."
+            }, {
+                name: "`명령어` `도움`"
+                value: "이 명령어 목록입니다."
+            }, {
+                name: "`봇_체인지로그`"
+                value: "기능 체인지로그를 표시합니다."
+            }, {
+                name: "`봇_시간표`"
+                value: "시간표 업데이트 현황을 표시합니다."
+            }],
+            footer: {
+                text: "IOP Bot by Nullspace#5289"
+            }
+        }
+    })
 }
 
 function coinDescriptive(head) {

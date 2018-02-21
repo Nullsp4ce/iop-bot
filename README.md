@@ -1,69 +1,77 @@
 # iop-bot
-Simplistic Discord bot for game [Girl's Frontline]'s information
+소녀전선 정보를 위한 간단지향 디스코드 봇
 
-## Usage
-### Keywords
-The following keywords can be used interchangeably and hereby written as representive.
+### 시동어
 
-(소전): `소전` `소녀전선` **(Note: This works as bot's prefix.)**
-  
-(일반): `일반` `보통`
+IOP 봇의 모든 소전 관련 명령은 `소전` 으로 시작됩니다. `소녀전선`으로 적어도 무방합니다.
 
-(중제): `중제` `중형` `중형제조`
+목록에 없는 명령은 무시됩니다.
 
-(장비): `장비` `요정` (No difference for equipment and fairy)
+### 시간 작성
+`h:mm`, `hmm`, `h%s m%s` (e.g. `h시간 m분`)을 지원합니다.
 
-(동전): `코인` `동전`
+---
+### 인형제조
 
-### Time notation
-You can write time as `h:mm`, `hmm` and also `h(%s) m(%s)` format.
-
-### T-doll Timetable
-- Unspecified type (default) `(소전) "인형"? %d`
+#### 전부 
+`소전 %d` `소전 인형 %d`
 
 > Q: 소전 350<br/>
-> A: 95식, 97식(AR), 한조, 도라지(중)(RF)
+A: 95식, 97식(AR), 한조, 도라지(중)(RF)
 
-Every possibilities regardless of craft type (normal/heavy) are printed.
-T-dolls appearing only in heavycraft are marked as `(중)`.
+중제 여부에 상관없이 모든 경우가 출력됩니다. 중제에서만 출현하는 인형은 `(중)` 표시가 붙습니다.
 
-- Normal `(소전) (일반) %d`
+#### 일반제조 
+`소전 일반 %d` `소전 보통 %d`
 
-Can't craft shotguns. Several entries in timetable becomes nothing.
+샷건이 나오지 않습니다.
 
 > Q: 소전 일반 350<br/>
-> A: 95식, 97식(AR), 한조(RF)
+A: 95식, 97식(AR), 한조(RF)
 
-- Heavy `(소전) (중제) %d`
+#### 중형제조 
+`소전 중제 %d` `소전 중형 %d` `소전 중형제조 %d`
 
-3 Stars are guaranteed. Doesn't produce handguns. Can craft shotguns.
+3성 이상이 확정됩니다. 권총을 만들 수 없으나, AR이 그 자리를 차지하며 샷건을 만들 수 있는 유일한 방법입니다.
 
 > Q: 소전 중제 350<br/>
-> A: 95식, 97식(AR), 한조, 도라지(RF)
+A: 95식, 97식(AR), 한조, 도라지(RF)
 
-### Equipment Timetable
-`(소전) (장비) %d`
+---
+### 장비제조
+`소전 장비 %d` `소전 요정 %d`
 
-In fact you can't craft fairies in normalcraft, but it's not implemented since timetables are completely seperated.
+요정은 장비중제가 아니면 나오지 않습니다만, 인형과 다르게 시간표가 완전히 분리되어있으므로 요정을 `장비`로도 찾을 수 있도록 명령을 분리하지 않았습니다.
 
-> Q: 소전 요정 500<br/>
-> A: 지휘요정
+> Q: 소전 장비 500<br/>
+A: 지휘요정
 
-### Utility: Cointoss
-`코인토스 (!던지기)` `(동전) "던지기"?` `운명의 코인토스!`
+### 유틸: `운명의 코인토스!` 
 
-`(소전) (Commands combinations above)`
+`동전 (던지기)?` `코인 (던지기)?`
 
-When you come across a situation that your craft time has two t-dolls, a cointoss is ready for you.
+`코인토스 ("던지기"를 제외한 문구)`
+
+`소전 (이상의 모든 조합)`
+
+시간표가 둘 중 하나인 상황에, 한 쪽을 정하고 기도할 수 있도록 코인토스가 준비되어있습니다.
 
 > Q: 운명의 코인토스!<br/>
-> A:<br/>
-> 운명의 코인토스!<br/>
-> 숫자. 뒷면이다.
+A:<br/>
+운명의 코인토스!<br/>
+숫자. 뒷면이다.
 
-## TODO
-- Help command
-- Different tables for each server?
-- Changelog, Link to this page
-- List optimizing to dictionary or sth?
-- Search for T-Doll/Equipment
+---
+### 도움! / 개발 소식
+
+`소전 명령어` `소전 도움`
+
+명령어 목록을 출력합니다.
+
+`소전 봇_체인지로그`
+
+체인지로그 페이지 링크 및 최근 버전 기능을 표시합니다.
+
+`소전 봇_시간표`
+
+시간표 업데이트 기록 페이지 링크 및 최근 추가된 인형을 소개합니다.
