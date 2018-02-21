@@ -18,6 +18,11 @@ var bot = new Discord.Client({
 bot.on('ready', function () {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
+    bot.setPresence({
+        game: {
+            name: "소전 명령어"
+        }
+    });
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -710,10 +715,10 @@ function changelog(bot, channelID) {
             color: 16777215,
             title: "IOP 봇 체인지로그",
             url: "https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md",
-            description: "v0.5.0",
+            description: "v0.5.1",
             fields: [{
                 name: "명령어 목록",
-                value: "`소전 명령어`로 명령어 목록을 볼 수 있습니다."
+                value: "`소전 명령어`로 명령어 목록을 볼 수 있습니다. 봇의 상태에도 쓰여있어요."
             }, {
                 name: "체인지로그, 시간표 업데이트 기록",
                 value: "`소전 봇_체인지로그`, `소전 봇_시간표`는 각각 봇의 기능/시간표 업데이트 상황을 제공합니다."
