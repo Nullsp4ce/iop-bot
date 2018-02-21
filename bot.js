@@ -732,12 +732,13 @@ function timetable(bot, channelID) {
             color: 16777215,
             title: "IOP 봇 시간표 업데이트 기록",
             url: "https://github.com/Nullsp4ce/iop-bot/blob/master/TimetableUpdate.md",
+            description: "최근 추가: 2018.2.20"
             fields: [{
                 name: "리벨리온 소대: AN-94(안구사), AK-12(마일리)",
                 value: "4:09 안구사 (5★ AR), 4:12 마일리 (5★ AR)"
             }],
             footer: {
-                text: "IOP Bot by Nullspace#5289 | 최근 추가: 2018.2.20"
+                text: "IOP Bot by Nullspace#5289"
             }
         }
     })
@@ -749,12 +750,10 @@ function help(bot, channelID) {
         embed: {
             color: 16777215,
             title: "IOP 봇 명령어 목록",
-            description: "모든 명령은 `소전`으로 시작합니다. 여기서는 생략합니다. \
-            명령어 별칭을 포함한 완전한 정보는 [깃헙 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/README.md)를 참조하십시오.",
+            description: "모든 명령은 `소전`으로 시작합니다. 여기서는 생략합니다.\n명령어 별칭을 포함한 완전한 정보는 [깃헙 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/README.md)를 참조하십시오.",
             fields: [{
                 name: "`(시간)`",
-                value: "해당 제조시간의 인형을 검색합니다. 괄호는 제외하십시오. \
-                시간은 h:mm, hmm, h시간 m분 모두 가능합니다."
+                value: "해당 제조시간의 인형을 검색합니다. 괄호는 제외하십시오.\n시간은 h:mm, hmm, h시간 m분 모두 가능합니다."
             }, {
                 name: "`일반 (시간)`",
                 value: "일반제조 환경 하에서 해당 제조시간의 인형을 검색합니다."
