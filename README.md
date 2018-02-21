@@ -13,11 +13,13 @@ The following keywords can be used interchangeably and hereby written as represe
 
 (장비): `장비` `요정` (No difference for equipment and fairy)
 
+(동전): `코인` `동전`
+
 ### Time notation
 You can write time as `h:mm`, `hmm` and also `h(%s) m(%s)` format.
 
 ### T-doll Timetable
-- Unspecified type (default) `(소전) (인형)? %d`
+- Unspecified type (default) `(소전) "인형"? %d`
 
 > Q: 소전 350<br/>
 > A: 95식, 97식(AR), 한조, 도라지(중)(RF)
@@ -48,7 +50,7 @@ In fact you can't craft fairies in normalcraft, but it's not implemented since t
 > A: 지휘요정
 
 ### Utility: Cointoss
-`코인토스 !(던지기)` `(코인 || 동전) (던지기)?` `운명의 코인토스!`
+`코인토스 (!던지기)` `(동전) "던지기"?` `운명의 코인토스!`
 
 `(소전) (Commands combinations above)`
 

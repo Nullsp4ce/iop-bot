@@ -45,8 +45,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
         } else if (hearCoinToss(args)) {
 
-            // (소전) 코인토스 !(던지기)
-            // (소전) (코인) (던지기)?
+            // (소전) (코인토스)
             coinCall(bot, channelID);
 
         } else {
@@ -88,6 +87,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         }
 
      } else if (hearCoinToss(args)) {
+
+        // (코인토스)
 
         if (userID == selfID) coinTossOfDestiny(bot, channelID);
         else coinCall(bot, channelID);
