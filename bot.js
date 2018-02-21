@@ -92,12 +92,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     write(bot, channelID, parseEquip(time));
                     break;
 
-                case "봇_체인지로그":
-                    changelog(bot, channelID);
-                    break;
+                case "체인지로그":
 
-                case "봇_시간표":
-                    timetable(bot, channelID);
+                    if (second == "기능") {
+                        changelog(bot, channelID);
+                    } else if (second == "시간표") {
+                        timetable(bot, channelID);
+                    }
                     break;
 
                 // 명령어 목록
@@ -715,13 +716,13 @@ function changelog(bot, channelID) {
             color: 16777215,
             title: "IOP 봇 체인지로그",
             url: "https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md",
-            description: "v0.5.1",
+            description: "v0.5.2",
             fields: [{
                 name: "명령어 목록",
                 value: "`소전 명령어`로 명령어 목록을 볼 수 있습니다. 봇의 상태에도 쓰여있어요."
             }, {
-                name: "체인지로그, 시간표 업데이트 기록",
-                value: "`소전 봇_체인지로그`, `소전 봇_시간표`는 각각 봇의 기능/시간표 업데이트 상황을 제공합니다."
+                name: "기능/시간표 체인지로그",
+                value: "`소전 체인지로그 (기능 | 시간표)`는 각각 봇의 기능/시간표에 대한 업데이트 상황을 제공합니다."
             }],
             footer: {
                 text: "IOP Bot by Nullspace#5289"
@@ -775,11 +776,11 @@ function help(bot, channelID) {
                 name: "`명령어` `도움`",
                 value: "이 명령어 목록입니다."
             }, {
-                name: "`봇_체인지로그`",
+                name: "`체인지로그 기능`",
                 value: "기능 체인지로그를 표시합니다."
             }, {
-                name: "`봇_시간표`",
-                value: "시간표 업데이트 현황을 표시합니다."
+                name: "`체인지로그 시간표`",
+                value: "시간표 업데이트 기록을 표시합니다."
             }],
             footer: {
                 text: "IOP Bot by Nullspace#5289"

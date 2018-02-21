@@ -5,8 +5,6 @@
 
 IOP 봇의 모든 소전 관련 명령은 `소전` 으로 시작됩니다. `소녀전선`으로 적어도 무방합니다.
 
-목록에 없는 명령은 무시됩니다.
-
 ### 시간 작성
 `h:mm`, `hmm`, `h%s m%s` (e.g. `h시간 m분`)을 지원합니다.
 
@@ -68,10 +66,10 @@ A:<br/>
 
 명령어 목록을 출력합니다.
 
-`소전 봇_체인지로그`
+`소전 체인지로그 기능`
 
 [기능 체인지로그 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md) 및 최근 버전 기능을 표시합니다.
 
-`소전 봇_시간표`
+`소전 체인지로그 시간표`
 
 [시간표 업데이트 기록 페이지 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/TimetableUpdate.md) 및 최근 추가된 인형을 소개합니다.
