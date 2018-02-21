@@ -60,7 +60,8 @@ When you come across a situation that your craft time has two t-dolls, a cointos
 > 숫자. 뒷면이다.
 
 ## TODO
-- Help command 
+- Help command
+- Different tables for each server?
 - Changelog, Link to this page
 - List optimizing to dictionary or sth?
-- T-Doll/Equipment Information
+- Search for T-Doll/Equipment
