@@ -708,6 +708,7 @@ function changelog(bot, channelID) {
         embed: {
             color: 16777215,
             title: "IOP 봇 체인지로그",
+            url: "https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md",
             description: "v0.5.0",
             fields: [{
                 name: "명령어 목록",
@@ -729,6 +730,7 @@ function timetable(bot, channelID) {
         embed: {
             color: 16777215,
             title: "IOP 봇 시간표 업데이트 기록",
+            url: "https://github.com/Nullsp4ce/iop-bot/blob/master/TimetableUpdate.md",
             fields: [{
                 name: "리벨리온 소대: AN-94(안구사), AK-12(마일리)"
                 value: "4:09 안구사 (5★ AR), 4:12 마일리 (5★ AR)"

@@ -70,8 +70,8 @@ A:<br/>
 
 `소전 봇_체인지로그`
 
-체인지로그 페이지 링크 및 최근 버전 기능을 표시합니다.
+[기능 체인지로그 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/Changelog.md) 및 최근 버전 기능을 표시합니다.
 
 `소전 봇_시간표`
 
-시간표 업데이트 기록 페이지 링크 및 최근 추가된 인형을 소개합니다.
+[시간표 업데이트 기록 페이지 링크](https://github.com/Nullsp4ce/iop-bot/blob/master/TimetableUpdate.md) 및 최근 추가된 인형을 소개합니다.
