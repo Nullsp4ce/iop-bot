@@ -93,6 +93,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
                 case "봇_시간표":
                     timetable(bot, channelID);
+                    break;
 
                 // 명령어 목록
                 // 소전 명령어
@@ -732,7 +733,7 @@ function timetable(bot, channelID) {
             title: "IOP 봇 시간표 업데이트 기록",
             url: "https://github.com/Nullsp4ce/iop-bot/blob/master/TimetableUpdate.md",
             fields: [{
-                name: "리벨리온 소대: AN-94(안구사), AK-12(마일리)"
+                name: "리벨리온 소대: AN-94(안구사), AK-12(마일리)",
                 value: "4:09 안구사 (5★ AR), 4:12 마일리 (5★ AR)"
             }],
             footer: {
@@ -755,25 +756,25 @@ function help(bot, channelID) {
                 value: "해당 제조시간의 인형을 검색합니다. 괄호는 제외하십시오. \
                 시간은 h:mm, hmm, h시간 m분 모두 가능합니다."
             }, {
-                name: "`일반 (시간)`"
+                name: "`일반 (시간)`",
                 value: "일반제조 환경 하에서 해당 제조시간의 인형을 검색합니다."
             }, {
-                name: "`중제 (시간)`"
+                name: "`중제 (시간)`",
                 value: "중형제조 환경 하에서 해당 제조시간의 인형을 검색합니다."
             }, {
-                name: "`장비 (시간)` `요정 (시간)`"
+                name: "`장비 (시간)` `요정 (시간)`",
                 value: "해당 제조시간의 장비 **또는 요정**을 검색합니다."
             }, {
-                name: "`운명의 코인토스!`"
+                name: "`운명의 코인토스!`",
                 value: "`소전`으로 시작하지 않아도 작동합니다."
             }, {
-                name: "`명령어` `도움`"
+                name: "`명령어` `도움`",
                 value: "이 명령어 목록입니다."
             }, {
-                name: "`봇_체인지로그`"
+                name: "`봇_체인지로그`",
                 value: "기능 체인지로그를 표시합니다."
             }, {
-                name: "`봇_시간표`"
+                name: "`봇_시간표`",
                 value: "시간표 업데이트 현황을 표시합니다."
             }],
             footer: {
